@@ -1,1 +1,183 @@
-[{"id":"6f1dc6ac.0537f8","type":"tab","label":"Temp-Humi","disabled":false,"info":""},{"id":"736cc1b0.36813","type":"mqtt-broker","name":"Emone","broker":"iot.emone.co.th","port":"1883","clientid":"","usetls":false,"compatmode":false,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""},{"id":"7cb04869.b37648","type":"mqtt-broker","name":"TNS","broker":"172.17.13.64","port":"1883","clientid":"","usetls":false,"compatmode":false,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""},{"id":"a0aedbc2.3e1318","type":"influxdb","hostname":"127.0.0.1","port":"8086","protocol":"http","database":"Temp_Hum","name":"","usetls":false,"tls":"","influxdbVersion":"1.8-flux","url":"http://localhost:8086","rejectUnauthorized":true},{"id":"ad15f2.9fb7ea1","type":"mqtt in","z":"6f1dc6ac.0537f8","name":"","topic":"/v1/tns/devices/00006890","qos":"2","datatype":"auto","broker":"736cc1b0.36813","x":110,"y":100,"wires":[[]]},{"id":"6723cd8c.923834","type":"mqtt in","z":"6f1dc6ac.0537f8","name":"","topic":"/v1/tns/devices/00006890","qos":"2","datatype":"auto","broker":"7cb04869.b37648","x":250,"y":280,"wires":[["85fe62be.82cbc"]]},{"id":"85fe62be.82cbc","type":"json","z":"6f1dc6ac.0537f8","name":"","property":"payload","action":"","pretty":false,"x":490,"y":340,"wires":[["c43e3d79.e83f8","fa8ac3a9.8bd98"]]},{"id":"c43e3d79.e83f8","type":"debug","z":"6f1dc6ac.0537f8","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":710,"y":280,"wires":[]},{"id":"fa8ac3a9.8bd98","type":"influxdb out","z":"6f1dc6ac.0537f8","influxdb":"a0aedbc2.3e1318","name":"","measurement":"Temp_Hum","precision":"","retentionPolicy":"","database":"Temp_Hum","precisionV18FluxV20":"ms","retentionPolicyV18Flux":"","org":"organisation","bucket":"bucket","x":810,"y":340,"wires":[]},{"id":"a7651703.8f4ad8","type":"mqtt in","z":"6f1dc6ac.0537f8","name":"","topic":"/v1/tns/devices/00006891","qos":"2","datatype":"auto","broker":"7cb04869.b37648","x":250,"y":380,"wires":[["85fe62be.82cbc"]]},{"id":"ca08b006.8bae9","type":"mqtt in","z":"6f1dc6ac.0537f8","name":"","topic":"/v1/tns/devices/00006876","qos":"2","datatype":"auto","broker":"7cb04869.b37648","x":250,"y":460,"wires":[["85fe62be.82cbc"]]}]
+[
+    {
+        "id": "6f1dc6ac.0537f8",
+        "type": "tab",
+        "label": "Temp-Humi",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "736cc1b0.36813",
+        "type": "mqtt-broker",
+        "name": "Emone",
+        "broker": "iot.emone.co.th",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "7cb04869.b37648",
+        "type": "mqtt-broker",
+        "name": "TNS",
+        "broker": "172.17.13.64",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "a0aedbc2.3e1318",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "Temp_Hum",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.8-flux",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "ad15f2.9fb7ea1",
+        "type": "mqtt in",
+        "z": "6f1dc6ac.0537f8",
+        "name": "",
+        "topic": "/v1/tns/devices/00006890",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "736cc1b0.36813",
+        "x": 290,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6723cd8c.923834",
+        "type": "mqtt in",
+        "z": "6f1dc6ac.0537f8",
+        "name": "",
+        "topic": "/v1/tns/devices/00006890",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "7cb04869.b37648",
+        "x": 250,
+        "y": 280,
+        "wires": [
+            [
+                "85fe62be.82cbc"
+            ]
+        ]
+    },
+    {
+        "id": "85fe62be.82cbc",
+        "type": "json",
+        "z": "6f1dc6ac.0537f8",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 340,
+        "wires": [
+            [
+                "c43e3d79.e83f8",
+                "fa8ac3a9.8bd98"
+            ]
+        ]
+    },
+    {
+        "id": "c43e3d79.e83f8",
+        "type": "debug",
+        "z": "6f1dc6ac.0537f8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "fa8ac3a9.8bd98",
+        "type": "influxdb out",
+        "z": "6f1dc6ac.0537f8",
+        "influxdb": "a0aedbc2.3e1318",
+        "name": "",
+        "measurement": "Temp_Hum",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "Temp_Hum",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 810,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a7651703.8f4ad8",
+        "type": "mqtt in",
+        "z": "6f1dc6ac.0537f8",
+        "name": "",
+        "topic": "/v1/tns/devices/00006891",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "7cb04869.b37648",
+        "x": 250,
+        "y": 380,
+        "wires": [
+            [
+                "85fe62be.82cbc"
+            ]
+        ]
+    },
+    {
+        "id": "ca08b006.8bae9",
+        "type": "mqtt in",
+        "z": "6f1dc6ac.0537f8",
+        "name": "",
+        "topic": "/v1/tns/devices/00006876",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "7cb04869.b37648",
+        "x": 250,
+        "y": 460,
+        "wires": [
+            [
+                "85fe62be.82cbc"
+            ]
+        ]
+    }
+]
